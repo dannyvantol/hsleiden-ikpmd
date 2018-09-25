@@ -1,5 +1,6 @@
 package org.bitbucket.dannyvantol.rekenlokaal;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,7 +16,7 @@ public class SplashActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-
+                startActivity(new Intent(SplashActivity.this, MainActivity.class));
             }
         }, 1000);
     }
