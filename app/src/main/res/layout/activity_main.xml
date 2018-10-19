@@ -5,7 +5,7 @@
     android:id="@+id/Background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/reken"
+    android:background="#ff92b8"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -20,66 +20,84 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.645">
 
-        <LinearLayout
+        <Button
+            android:id="@+id/KnopOefenen"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="80dp"
 
-            <Button
-                android:id="@+id/KnopOefenen"
-                android:layout_width="wrap_content"
-                android:layout_height="140dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:text="Oefenen"
-                android:textAlignment="center" />
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button"
+            android:shadowColor="#363636"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="5"
+            android:text="Oefenen"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:drawable="@drawable/shadow"/>
 
-            <Button
-                android:id="@+id/KnopToetsen"
-                android:layout_width="wrap_content"
-                android:layout_height="140dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:text="Toesten" />
-        </LinearLayout>
-
-        <LinearLayout
+        <Button
+            android:id="@+id/KnopToetsen"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="80dp"
+            android:layout_marginBottom="10dp"
 
-            <Button
-                android:id="@+id/KnopAchievements"
-                android:layout_width="112dp"
-                android:layout_height="140dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:text="Achievements" />
+            android:background="@drawable/button"
+            android:shadowColor="#363636"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="5"
+            android:text="Toetsen"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/KnopScoreboard"
-                android:layout_width="wrap_content"
-                android:layout_height="140dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:text="Scoreboard" />
-        </LinearLayout>
+        <Button
+            android:id="@+id/KnopAchievements"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginBottom="10dp"
+
+            android:background="@drawable/button"
+            android:shadowColor="#363636"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="5"
+            android:text="achievement"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/KnopScoreboard"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/button"
+
+            android:shadowColor="#363636"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="5"
+            android:text="scoreboard"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
+
     </LinearLayout>
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="256dp"
-        android:layout_height="59dp"
+        android:layout_width="276dp"
+        android:layout_height="70dp"
         android:fontFamily="casual"
         android:text="@string/app_name"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="?android:attr/colorPressedHighlight"
-        android:textSize="36sp"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="44sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="64dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="54dp"
         tools:layout_editor_absoluteY="16dp" />
 
 </android.support.constraint.ConstraintLayout>
