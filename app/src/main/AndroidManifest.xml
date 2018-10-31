@@ -16,10 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".ChooseTableActivity"></activity>
-        <activity android:name=".PracticeActivity">
-        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ChooseTableActivity" />
+        <activity android:name=".PracticeActivity"></activity>
+        <activity android:name=".ChooseDifficultyActivity"></activity>
     </application>
 
 </manifest>

@@ -24,7 +24,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/knopTable7"
+        android:id="@+id/ButtonTable7"
         android:layout_width="176dp"
         android:layout_height="68dp"
 
@@ -34,6 +34,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/button"
         android:drawable="@drawable/shadow"
+        android:onClick="selectTable"
         android:shadowColor="#363636"
         android:shadowDx="1"
         android:shadowDy="1"
@@ -41,13 +42,13 @@
         android:text="7"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/knopTable9"
-        app:layout_constraintEnd_toStartOf="@+id/knopTable8"
+        app:layout_constraintBottom_toTopOf="@+id/ButtonTable9"
+        app:layout_constraintEnd_toStartOf="@+id/ButtonTable8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/knopTable5" />
+        app:layout_constraintTop_toBottomOf="@+id/ButtonTable5" />
 
     <Button
-        android:id="@+id/knopTable8"
+        android:id="@+id/ButtonTable8"
         android:layout_width="176dp"
         android:layout_height="68dp"
 
@@ -56,6 +57,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/button"
         android:drawable="@drawable/shadow"
+        android:onClick="selectTable"
         android:shadowColor="#363636"
         android:shadowDx="1"
         android:shadowDy="1"
@@ -63,12 +65,12 @@
         android:text="8"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/knopTable10"
+        app:layout_constraintBottom_toTopOf="@+id/ButtonTable10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/knopTable6" />
+        app:layout_constraintTop_toBottomOf="@+id/ButtonTable6" />
 
     <Button
-        android:id="@+id/knopTable9"
+        android:id="@+id/ButtonTable9"
         android:layout_width="176dp"
         android:layout_height="68dp"
 
@@ -78,6 +80,7 @@
         android:layout_marginBottom="32dp"
         android:background="@drawable/button"
         android:drawable="@drawable/shadow"
+        android:onClick="selectTable"
         android:shadowColor="#363636"
         android:shadowDx="1"
         android:shadowDy="1"
@@ -86,12 +89,13 @@
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/knopTable10"
+        app:layout_constraintEnd_toStartOf="@+id/ButtonTable10"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/knopTable7" />
+        app:layout_constraintTop_toBottomOf="@+id/ButtonTable7" />
 
     <Button
-        android:id="@+id/knopTable10"
+        android:id="@+id/ButtonTable10"
         android:layout_width="176dp"
         android:layout_height="68dp"
 
@@ -100,6 +104,7 @@
         android:layout_marginBottom="32dp"
         android:background="@drawable/button"
         android:drawable="@drawable/shadow"
+        android:onClick="selectTable"
         android:shadowColor="#363636"
         android:shadowDx="1"
         android:shadowDy="1"
@@ -109,10 +114,10 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/knopTable8" />
+        app:layout_constraintTop_toBottomOf="@+id/ButtonTable8" />
 
     <Button
-        android:id="@+id/KnopTable1"
+        android:id="@+id/ButtonTable1"
         android:layout_width="176dp"
         android:layout_height="68dp"
 
@@ -122,6 +127,7 @@
         android:layout_marginBottom="9dp"
         android:background="@drawable/button"
         android:drawable="@drawable/shadow"
+        android:onClick="selectTable"
         android:shadowColor="#363636"
         android:shadowDx="1"
         android:shadowDy="1"
@@ -129,13 +135,13 @@
         android:text="1"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/knopTable3"
-        app:layout_constraintEnd_toStartOf="@+id/knopTable2"
+        app:layout_constraintBottom_toTopOf="@+id/ButtonTable3"
+        app:layout_constraintEnd_toStartOf="@+id/ButtonTable2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
-        android:id="@+id/knopTable3"
+        android:id="@+id/ButtonTable3"
         android:layout_width="176dp"
         android:layout_height="68dp"
 
@@ -145,6 +151,7 @@
         android:layout_marginBottom="11dp"
         android:background="@drawable/button"
         android:drawable="@drawable/shadow"
+        android:onClick="selectTable"
         android:shadowColor="#363636"
         android:shadowDx="1"
         android:shadowDy="1"
@@ -152,13 +159,13 @@
         android:text="3"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/knopTable5"
-        app:layout_constraintEnd_toStartOf="@+id/knopTable4"
+        app:layout_constraintBottom_toTopOf="@+id/ButtonTable5"
+        app:layout_constraintEnd_toStartOf="@+id/ButtonTable4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/KnopTable1" />
+        app:layout_constraintTop_toBottomOf="@+id/ButtonTable1" />
 
     <Button
-        android:id="@+id/knopTable4"
+        android:id="@+id/ButtonTable4"
         android:layout_width="176dp"
         android:layout_height="68dp"
 
@@ -167,6 +174,7 @@
         android:layout_marginBottom="11dp"
         android:background="@drawable/button"
         android:drawable="@drawable/shadow"
+        android:onClick="selectTable"
         android:shadowColor="#363636"
         android:shadowDx="1"
         android:shadowDy="1"
@@ -174,12 +182,12 @@
         android:text="4"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/knopTable6"
+        app:layout_constraintBottom_toTopOf="@+id/ButtonTable6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/knopTable2" />
+        app:layout_constraintTop_toBottomOf="@+id/ButtonTable2" />
 
     <Button
-        android:id="@+id/knopTable5"
+        android:id="@+id/ButtonTable5"
         android:layout_width="176dp"
         android:layout_height="68dp"
 
@@ -189,6 +197,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/button"
         android:drawable="@drawable/shadow"
+        android:onClick="selectTable"
         android:shadowColor="#363636"
         android:shadowDx="1"
         android:shadowDy="1"
@@ -196,13 +205,13 @@
         android:text="5"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/knopTable7"
-        app:layout_constraintEnd_toStartOf="@+id/knopTable6"
+        app:layout_constraintBottom_toTopOf="@+id/ButtonTable7"
+        app:layout_constraintEnd_toStartOf="@+id/ButtonTable6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/knopTable3" />
+        app:layout_constraintTop_toBottomOf="@+id/ButtonTable3" />
 
     <Button
-        android:id="@+id/knopTable6"
+        android:id="@+id/ButtonTable6"
         android:layout_width="176dp"
         android:layout_height="68dp"
 
@@ -218,12 +227,12 @@
         android:text="6"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/knopTable8"
+        app:layout_constraintBottom_toTopOf="@+id/ButtonTable8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/knopTable4" />
+        app:layout_constraintTop_toBottomOf="@+id/ButtonTable4" />
 
     <Button
-        android:id="@+id/knopTable2"
+        android:id="@+id/ButtonTable2"
         android:layout_width="176dp"
         android:layout_height="68dp"
 
@@ -232,6 +241,7 @@
         android:layout_marginBottom="9dp"
         android:background="@drawable/button"
         android:drawable="@drawable/shadow"
+        android:onClick="selectTable"
         android:shadowColor="#363636"
         android:shadowDx="1"
         android:shadowDy="1"
@@ -239,7 +249,7 @@
         android:text="2"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/knopTable4"
+        app:layout_constraintBottom_toTopOf="@+id/ButtonTable4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
     />
