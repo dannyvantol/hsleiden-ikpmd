@@ -65,7 +65,7 @@
             android:shadowDx="1"
             android:shadowDy="1"
             android:shadowRadius="5"
-            android:text="achievement"
+            android:text="dagelijkse uitdaging"
             android:textColor="#FFFFFF"
             android:textSize="30sp" />
 
