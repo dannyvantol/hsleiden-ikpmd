@@ -24,20 +24,20 @@
         app:layout_constraintVertical_bias="0.645">
 
         <Button
-            android:id="@+id/KnopOefenen"
+            android:id="@+id/ButtonOefenen"
             android:layout_width="match_parent"
             android:layout_height="80dp"
 
             android:layout_marginBottom="10dp"
             android:background="@drawable/button"
+            android:drawable="@drawable/shadow"
             android:shadowColor="#363636"
             android:shadowDx="1"
             android:shadowDy="1"
             android:shadowRadius="5"
             android:text="Oefenen"
             android:textColor="#FFFFFF"
-            android:textSize="30sp"
-            android:drawable="@drawable/shadow"/>
+            android:textSize="30sp" />
 
         <Button
             android:id="@+id/KnopToetsen"
