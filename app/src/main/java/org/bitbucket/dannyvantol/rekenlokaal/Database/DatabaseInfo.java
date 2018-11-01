@@ -6,9 +6,8 @@ public class DatabaseInfo {
     }
 
     public class TestsColumn{
-        public static final String TESTID = "test_id";
         public static final String DIFFICULTY = "difficulty";
-        public static final String TABLE = "table";
+        public static final String TABLE = "table_number";
         public static final String GRADE = "grade";
     }
 

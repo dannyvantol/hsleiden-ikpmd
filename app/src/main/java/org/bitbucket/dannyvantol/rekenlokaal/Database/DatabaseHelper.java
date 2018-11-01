@@ -8,12 +8,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static SQLiteDatabase mSQLDB;
     private static DatabaseHelper mInstance;
     public static final String dbName = "barometer.db";
-    public static final int dbVersion = 1;
+    public static final int dbVersion = 3;
 
     public DatabaseHelper(Context context){
         super(context, dbName, null, dbVersion);
@@ -29,13 +30,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE " + DatabaseInfo.Tests.TESTS + "(" +
+        String createTestTable = "CREATE TABLE " + DatabaseInfo.Tests.TESTS + " (" +
                 BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                DatabaseInfo.TestsColumn.TESTID + " TEXT," +
                 DatabaseInfo.TestsColumn.DIFFICULTY + " TEXT," +
-                DatabaseInfo.TestsColumn.TABLE + " TEXT," +
-                DatabaseInfo.TestsColumn.GRADE + " TEXT"
-        );
+                DatabaseInfo.TestsColumn.TABLE + " INTEGER," +
+                DatabaseInfo.TestsColumn.GRADE + " DECIMAL(3,1)" +
+                ");";
+        sqLiteDatabase.execSQL(createTestTable);
     }
     // CREATE TABLE test (_id INTEGER PRIMARY KEY AUTOINCREMENT, test_id TEXT, difficulty TEXT, table TEXT, grade TEXT);
 

@@ -40,7 +40,7 @@
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/KnopToetsen"
+            android:id="@+id/ButtonToetsen"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_marginBottom="10dp"
@@ -55,7 +55,7 @@
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/KnopAchievements"
+            android:id="@+id/ButtonDaily"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_marginBottom="10dp"
@@ -70,7 +70,7 @@
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/KnopScoreboard"
+            android:id="@+id/ButtonScoreboard"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:background="@drawable/button"
