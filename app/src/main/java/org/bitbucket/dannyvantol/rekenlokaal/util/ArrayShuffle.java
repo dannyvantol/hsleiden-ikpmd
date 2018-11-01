@@ -21,7 +21,7 @@ public class ArrayShuffle {
     }
 
     // Implementing Fisher–Yates shuffle
-    public static void integer(String[] ar)
+    public static void string(String[] ar)
     {
         // If running on Java 6 or older, use `new Random()` on RHS here
         Random rnd = ThreadLocalRandom.current();

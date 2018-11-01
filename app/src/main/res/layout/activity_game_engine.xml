@@ -15,4 +15,11 @@
             android:layout_marginTop="100dp" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" android:fontFamily="@font/candy_cane"
             android:textSize="36sp"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/buttonContainer" android:padding="15dp" android:gravity="center">
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

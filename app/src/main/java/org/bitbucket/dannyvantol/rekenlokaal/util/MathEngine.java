@@ -1,5 +1,9 @@
 package org.bitbucket.dannyvantol.rekenlokaal.util;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 public class MathEngine {
     private int minimum;
     private int maximum;
@@ -9,11 +13,23 @@ public class MathEngine {
         this.maximum = maximum;
     }
 
-    public int[] generateRandomNumbers(int times) {
+    public int[] generateRandomNumbers(int times, int[] excluded) {
         int[] numbers = new int[times];
+        Set<Integer> forbidden = new HashSet<>();
 
-        for (int i = 0; i < times; i++) {
-            numbers[i] = (int) (Math.random() * this.maximum + this.minimum);
+        for (int x: excluded) {
+            forbidden.add(x);
+        }
+        int i = 0;
+
+        while (i < times) {
+            int random =  ((int) (Math.random() * (this.maximum - this.minimum)) + 1) + this.minimum;
+
+            if (!forbidden.contains(random) && random % this.minimum == 0) {
+                numbers[i] = random;
+                forbidden.add(random);
+                i++;
+            }
         }
 
         return numbers;

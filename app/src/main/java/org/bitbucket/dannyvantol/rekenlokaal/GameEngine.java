@@ -1,0 +1,144 @@
+package org.bitbucket.dannyvantol.rekenlokaal;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.bitbucket.dannyvantol.rekenlokaal.layout.ButtonLayout;
+import org.bitbucket.dannyvantol.rekenlokaal.layout.FourButtonLayout;
+import org.bitbucket.dannyvantol.rekenlokaal.layout.SixButtonLayout;
+import org.bitbucket.dannyvantol.rekenlokaal.layout.ThreeButtonLayout;
+import org.bitbucket.dannyvantol.rekenlokaal.util.ArrayShuffle;
+import org.bitbucket.dannyvantol.rekenlokaal.util.Difficulty;
+import org.bitbucket.dannyvantol.rekenlokaal.util.MathEngine;
+import org.bitbucket.dannyvantol.rekenlokaal.util.Product;
+
+import java.util.HashMap;
+
+public abstract class GameEngine extends Activity {
+    private static int LIMIT = 10;
+    private Bundle bundle;
+
+    private int table;
+    private Difficulty difficulty;
+    private TextView product;
+
+    private int counter = 0;
+
+    private String[] products;
+    private HashMap<String, Integer> mapper = new HashMap<>();
+
+    private LinearLayout buttonContainer;
+    private ButtonLayout buttonLayout;
+
+    private MathEngine mathEngine;
+    private Product current;
+
+    private HashMap<Difficulty, Integer> difficultyMapper = new HashMap<>();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_game_engine);
+
+        this.bundle = getIntent().getExtras();
+
+        this.table = this.bundle.getInt("table");
+        this.difficulty = (Difficulty) this.bundle.getSerializable("difficulty");
+        this.mathEngine = new MathEngine(this.table, this.table * 10);
+
+        this.product = (TextView) findViewById(R.id.product);
+        this.buttonContainer = (LinearLayout) findViewById(R.id.buttonContainer);
+        this.difficultyMapper.put(Difficulty.EASY, 3);
+        this.difficultyMapper.put(Difficulty.NORMAL, 4);
+        this.difficultyMapper.put(Difficulty.HARD, 6);
+
+        this.generateLayout();
+        this.generateRandomOrderProducts();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        this.loop();
+    }
+
+    protected void generateLayout() {
+        switch (this.difficulty) {
+            case EASY:
+                this.buttonLayout = new ThreeButtonLayout(this, this.buttonContainer);
+                break;
+            case NORMAL:
+                this.buttonLayout = new FourButtonLayout(this, this.buttonContainer);
+                break;
+            case HARD:
+                this.buttonLayout = new SixButtonLayout(this, this.buttonContainer);
+                break;
+        }
+
+        this.buttonLayout.generate();
+    }
+
+    protected boolean hasNext() {
+        return counter < this.mapper.size();
+    }
+
+    protected Product next() {
+        String productKey = this.products[counter];
+        Product product = new Product(productKey, this.mapper.get(productKey));
+
+        this.counter++;
+
+        return product;
+    }
+
+    public void answer(Button button, int answer) {
+        if (answer == this.current.getValue()) {
+            this.onCorrectAnswer(this.current, answer);
+            this.loop();
+        } else {
+            this.onIncorrectAnswer(this.current, answer);
+            button.setEnabled(false);
+            button.setBackgroundResource(R.drawable.button_disabled);
+        }
+    }
+
+    private void generateRandomOrderProducts() {
+        this.products = new String[10];
+        int[] products = new int[10];
+
+        for (int i = 1; i <= GameEngine.LIMIT; i++) {
+            products[i - 1] = i * this.table;
+            this.products[i - 1] = Integer.toString(this.table) + " " + getResources().getString(R.string.multiplier) + " " + Integer.toString(i);
+        }
+
+        for (int x = 0; x < GameEngine.LIMIT; x++) {
+            this.mapper.put(this.products[x], products[x]);
+        }
+
+        System.out.println(this.products[0]);
+        ArrayShuffle.string(this.products);
+    }
+
+    private void loop() {
+        if (this.hasNext()) {
+            this.current = this.next();
+
+            int[] random = this.mathEngine.generateRandomNumbers(this.difficultyMapper.get(this.difficulty), new int[] {this.current.getValue()});
+            random[0] = this.current.getValue();
+
+            ArrayShuffle.integer(random);
+
+            this.product.setText(this.current.getProduct());
+            this.buttonLayout.setValues(random);
+        } else {
+            this.finish();
+        }
+    }
+
+    abstract void onCorrectAnswer(Product product, int chosen);
+    abstract void onIncorrectAnswer(Product product, int chosen);
+    abstract void onEndGame();
+}
