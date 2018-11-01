@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import org.bitbucket.dannyvantol.rekenlokaal.Database.DatabaseHelper;
+
 public class MainActivity extends AppCompatActivity {
 
     Button buttonOefenen;
