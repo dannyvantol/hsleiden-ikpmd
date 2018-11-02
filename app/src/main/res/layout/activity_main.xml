@@ -84,18 +84,20 @@
                 android:textSize="30sp" android:fontFamily="@font/candy_cane"/>
 
         <Button
-                android:id="@+id/ButtonScoreboard"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:background="@drawable/button"
+            android:id="@+id/ButtonScoreboard"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/button"
 
-                android:shadowColor="#363636"
-                android:shadowDx="1"
-                android:shadowDy="1"
-                android:shadowRadius="5"
-                android:text="scoreboard"
-                android:textColor="#FFFFFF"
-                android:textSize="30sp" android:fontFamily="@font/candy_cane"/>
+            android:fontFamily="@font/candy_cane"
+            android:onClick="scoreboard"
+            android:shadowColor="#363636"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="5"
+            android:text="scoreboard"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
 
     </LinearLayout>
 

@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonOefenen;
     private Button buttonScoreboard;
     private Button butttonDaily;
+    private Button butttonScoreboard;
 
     private MediaPlayer mediaPlayer;
 
@@ -31,20 +32,7 @@ public class MainActivity extends AppCompatActivity {
         buttonOefenen = (Button) findViewById(R.id.ButtonOefenen);
         buttonScoreboard = (Button) findViewById(R.id.ButtonScoreboard);
         butttonDaily = (Button) findViewById(R.id.ButtonDaily);
-
-        buttonScoreboard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                addToDatabase();
-            }
-        });
-
-        butttonDaily.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getFromDatabase();
-            }
-        });
+        butttonScoreboard = (Button) findViewById(R.id.ButtonScoreboard);
 
         this.mediaPlayer = MediaPlayer.create(this, R.raw.kahoot_lobby);
         this.mediaPlayer.setLooping(true);
@@ -71,29 +59,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void addToDatabase() {
-        DatabaseHelper databaseHelper = DatabaseHelper.getHelper(this);
-
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(DatabaseInfo.TestsColumn.DIFFICULTY, 1);
-        contentValues.put(DatabaseInfo.TestsColumn.TABLE, 7);
-        contentValues.put(DatabaseInfo.TestsColumn.GRADE, 9);
-
-        databaseHelper.insert(DatabaseInfo.Tests.TESTS, null, contentValues);
-    }
-
-    private void getFromDatabase() {
-        DatabaseHelper databaseHelper = DatabaseHelper.getHelper(this);
-
-        Cursor cursor = databaseHelper.query(DatabaseInfo.Tests.TESTS, new String[]{
-            "*"
-        },null, null, null, null, null);
-
-        cursor.moveToFirst();
-
-        String cijfer = (String) cursor.getString(cursor.getColumnIndex("grade"));
-
-        Log.d("Je cijfer is: ", cijfer + "!");
+    public void scoreboard(View view) {
+        Intent intent = new Intent(MainActivity.this, ScoreboardActivity.class);
+        startActivity(intent);
     }
 
     @Override
