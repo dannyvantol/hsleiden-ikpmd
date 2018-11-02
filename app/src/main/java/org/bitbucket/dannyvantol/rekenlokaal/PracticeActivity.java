@@ -2,18 +2,26 @@ package org.bitbucket.dannyvantol.rekenlokaal;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import org.bitbucket.dannyvantol.rekenlokaal.util.ArrayShuffle;
+import org.bitbucket.dannyvantol.rekenlokaal.util.Difficulty;
+import org.bitbucket.dannyvantol.rekenlokaal.util.Product;
 
-public class PracticeActivity extends AppCompatActivity {
+import java.util.HashMap;
 
-    private Bundle bundle;
-    private int table;
-    private int difficulty;
+public class PracticeActivity extends GameEngine {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_practice);
+    void onCorrectAnswer(Product product, int chosen) {
 
-        this.bundle = getIntent().getExtras();
+    }
+
+    @Override
+    void onIncorrectAnswer(Product product, int chosen) {
+
+    }
+
+    @Override
+    void onEndGame() {
+
     }
 }
