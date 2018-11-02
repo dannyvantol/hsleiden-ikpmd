@@ -33,7 +33,7 @@ public class TestActivity extends GameEngine {
 
     @Override
     void onEndGame() {
-        Bundle bundle = new Bundle();
+        Bundle bundle = getIntent().getExtras();
         bundle.putSerializable("failures", this.failures);
         bundle.putInt("grade", this.grade);
 
