@@ -20,7 +20,7 @@ public class ButtonGenerator {
 
             button.setTypeface(ResourcesCompat.getFont(activity, R.font.candy_cane));
             button.setTextSize(64);
-            button.setText("EMPTY");
+            button.setText("0");
 
             buttons[i] = button;
         }
