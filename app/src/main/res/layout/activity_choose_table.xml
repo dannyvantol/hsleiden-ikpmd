@@ -1,259 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ff92b8"
-    tools:context=".ChooseTableActivity">
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             android:background="#ff92b8"
+                                             tools:context=".ChooseTableActivity">
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="389dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="16dp"
-        android:text="Welke tafel wil je oefenen?"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="@android:color/holo_orange_dark"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <LinearLayout
-        android:layout_width="383dp"
-        android:layout_height="521dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3">
-
-        <LinearLayout
-            android:layout_width="200dp"
-            android:layout_height="508dp"
-            android:orientation="vertical"
-            tools:layout_editor_absoluteY="506dp">
-
-            <Button
-                android:id="@+id/ButtonTable1"
-                android:layout_width="176dp"
-                android:layout_height="68dp"
-
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="77dp"
-                android:layout_marginEnd="22dp"
-                android:layout_marginBottom="9dp"
-                android:background="@drawable/button"
-                android:drawable="@drawable/shadow"
-                android:onClick="selectTable"
-                android:shadowColor="#363636"
-                android:shadowDx="1"
-                android:shadowDy="1"
-                android:shadowRadius="5"
-                android:text="1"
-                android:textColor="#FFFFFF"
-                android:textSize="30sp"
-                app:layout_constraintBottom_toTopOf="@+id/ButtonTable3"
-                app:layout_constraintEnd_toStartOf="@+id/ButtonTable2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-            <Button
-                android:id="@+id/ButtonTable3"
-                android:layout_width="176dp"
-                android:layout_height="68dp"
-
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="9dp"
-                android:layout_marginEnd="22dp"
-                android:layout_marginBottom="11dp"
-                android:background="@drawable/button"
-                android:drawable="@drawable/shadow"
-                android:onClick="selectTable"
-                android:shadowColor="#363636"
-                android:shadowDx="1"
-                android:shadowDy="1"
-                android:shadowRadius="5"
-                android:text="3"
-                android:textColor="#FFFFFF"
-                android:textSize="30sp"
-                app:layout_constraintBottom_toTopOf="@+id/ButtonTable5"
-                app:layout_constraintEnd_toStartOf="@+id/ButtonTable4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ButtonTable1" />
-
-            <Button
-                android:id="@+id/ButtonTable5"
-                android:layout_width="176dp"
-                android:layout_height="68dp"
-
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="22dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/button"
-                android:drawable="@drawable/shadow"
-                android:onClick="selectTable"
-                android:shadowColor="#363636"
-                android:shadowDx="1"
-                android:shadowDy="1"
-                android:shadowRadius="5"
-                android:text="5"
-                android:textColor="#FFFFFF"
-                android:textSize="30sp"
-                app:layout_constraintBottom_toTopOf="@+id/ButtonTable7"
-                app:layout_constraintEnd_toStartOf="@+id/ButtonTable6"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ButtonTable3" />
-
-            <Button
-                android:id="@+id/ButtonTable7"
-                android:layout_width="176dp"
-                android:layout_height="68dp"
-
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="22dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/button"
-                android:drawable="@drawable/shadow"
-                android:onClick="selectTable"
-                android:shadowColor="#363636"
-                android:shadowDx="1"
-                android:shadowDy="1"
-                android:shadowRadius="5"
-                android:text="7"
-                android:textColor="#FFFFFF"
-                android:textSize="30sp" />
-
-            <Button
-                android:id="@+id/ButtonTable9"
-                android:layout_width="176dp"
-                android:layout_height="68dp"
-
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="22dp"
-                android:layout_marginBottom="32dp"
-                android:background="@drawable/button"
-                android:drawable="@drawable/shadow"
-                android:onClick="selectTable"
-                android:shadowColor="#363636"
-                android:shadowDx="1"
-                android:shadowDy="1"
-                android:shadowRadius="5"
-                android:text="9"
-                android:textColor="#FFFFFF"
-                android:textSize="30sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
+            android:id="@+id/textView3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
+            android:layout_height="wrap_content"
+            android:text="Welke tafel wil je oefenen?"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/colorBlackAlpha"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="32dp" android:fontFamily="@font/candy_cane"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="8dp">
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:gravity="center">
             <Button
-                android:id="@+id/ButtonTable2"
-                android:layout_width="176dp"
-                android:layout_height="68dp"
+                    android:id="@+id/ButtonTable1"
+                    android:layout_height="100dp"
+                    android:layout_width="150dp"
 
-                android:layout_marginTop="77dp"
-                android:layout_marginEnd="6dp"
-                android:layout_marginBottom="9dp"
-                android:background="@drawable/button"
-                android:drawable="@drawable/shadow"
-                android:onClick="selectTable"
-                android:shadowColor="#363636"
-                android:shadowDx="1"
-                android:shadowDy="1"
-                android:shadowRadius="5"
-                android:text="2"
-                android:textColor="#FFFFFF"
-                android:textSize="30sp"/>
-
+                    android:background="@drawable/button"
+                    android:drawable="@drawable/shadow"
+                    android:onClick="selectTable"
+                    android:shadowColor="#363636"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="5"
+                    android:text="1"
+                    android:textColor="#FFFFFF"
+                    android:textSize="48dp"
+                    android:fontFamily="@font/candy_cane"/>
             <Button
-                android:id="@+id/ButtonTable4"
-                android:layout_width="176dp"
-                android:layout_height="68dp"
+                    android:id="@+id/ButtonTable2"
+                    android:layout_height="100dp"
+                    android:layout_width="150dp"
 
-                android:layout_marginTop="9dp"
-                android:layout_marginEnd="6dp"
-                android:layout_marginBottom="11dp"
-                android:background="@drawable/button"
-                android:drawable="@drawable/shadow"
-                android:onClick="selectTable"
-                android:shadowColor="#363636"
-                android:shadowDx="1"
-                android:shadowDy="1"
-                android:shadowRadius="5"
-                android:text="4"
-                android:textColor="#FFFFFF"
-                android:textSize="30sp"/>
-
+                    android:background="@drawable/button"
+                    android:drawable="@drawable/shadow"
+                    android:onClick="selectTable"
+                    android:shadowColor="#363636"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="5"
+                    android:text="2"
+                    android:textColor="#FFFFFF"
+                    android:textSize="48dp"
+                    android:fontFamily="@font/candy_cane" android:layout_marginLeft="15dp"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="15dp"
+                android:gravity="center">
             <Button
-                android:id="@+id/ButtonTable6"
-                android:layout_width="176dp"
-                android:layout_height="68dp"
+                    android:id="@+id/ButtonTable3"
+                    android:layout_height="100dp"
+                    android:layout_width="150dp"
 
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/button"
-                android:drawable="@drawable/shadow"
-                android:shadowColor="#363636"
-                android:shadowDx="1"
-                android:shadowDy="1"
-                android:shadowRadius="5"
-                android:text="6"
-                android:textColor="#FFFFFF"
-                android:textSize="30sp"/>
-
+                    android:background="@drawable/button"
+                    android:drawable="@drawable/shadow"
+                    android:onClick="selectTable"
+                    android:shadowColor="#363636"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="5"
+                    android:text="3"
+                    android:textColor="#FFFFFF"
+                    android:textSize="48dp"
+                    android:fontFamily="@font/candy_cane"/>
             <Button
-                android:id="@+id/ButtonTable8"
-                android:layout_width="176dp"
-                android:layout_height="68dp"
+                    android:id="@+id/ButtonTable4"
+                    android:layout_height="100dp"
+                    android:layout_width="150dp"
 
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="6dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/button"
-                android:drawable="@drawable/shadow"
-                android:onClick="selectTable"
-                android:shadowColor="#363636"
-                android:shadowDx="1"
-                android:shadowDy="1"
-                android:shadowRadius="5"
-                android:text="8"
-                android:textColor="#FFFFFF"
-                android:textSize="30sp"/>
-
+                    android:background="@drawable/button"
+                    android:drawable="@drawable/shadow"
+                    android:onClick="selectTable"
+                    android:shadowColor="#363636"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="5"
+                    android:text="4"
+                    android:textColor="#FFFFFF"
+                    android:textSize="48dp"
+                    android:fontFamily="@font/candy_cane" android:layout_marginLeft="15dp"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="15dp"
+                android:gravity="center">
             <Button
-                android:id="@+id/ButtonTable10"
-                android:layout_width="176dp"
-                android:layout_height="68dp"
+                    android:id="@+id/ButtonTable5"
+                    android:layout_height="100dp"
+                    android:layout_width="150dp"
 
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="6dp"
-                android:layout_marginBottom="32dp"
-                android:background="@drawable/button"
-                android:drawable="@drawable/shadow"
-                android:onClick="selectTable"
-                android:shadowColor="#363636"
-                android:shadowDx="1"
-                android:shadowDy="1"
-                android:shadowRadius="5"
-                android:text="10"
-                android:textColor="#FFFFFF"
-                android:textSize="30sp"/>
+                    android:background="@drawable/button"
+                    android:drawable="@drawable/shadow"
+                    android:onClick="selectTable"
+                    android:shadowColor="#363636"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="5"
+                    android:text="5"
+                    android:textColor="#FFFFFF"
+                    android:textSize="48dp"
+                    android:fontFamily="@font/candy_cane"/>
+            <Button
+                    android:id="@+id/ButtonTable6"
+                    android:layout_height="100dp"
+                    android:layout_width="150dp"
 
+                    android:background="@drawable/button"
+                    android:drawable="@drawable/shadow"
+                    android:shadowColor="#363636"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="5"
+                    android:text="6"
+                    android:textColor="#FFFFFF"
+                    android:textSize="48dp"
+                    android:fontFamily="@font/candy_cane" android:layout_marginLeft="15dp"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="15dp"
+                android:gravity="center">
+            <Button
+                    android:id="@+id/ButtonTable7"
+                    android:layout_height="100dp"
+                    android:layout_width="150dp"
+
+                    android:background="@drawable/button"
+                    android:drawable="@drawable/shadow"
+                    android:onClick="selectTable"
+                    android:shadowColor="#363636"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="5"
+                    android:text="7"
+                    android:textColor="#FFFFFF"
+                    android:textSize="48dp"
+                    android:fontFamily="@font/candy_cane"/>
+            <Button
+                    android:id="@+id/ButtonTable8"
+                    android:layout_height="100dp"
+                    android:layout_width="150dp"
+
+                    android:background="@drawable/button"
+                    android:drawable="@drawable/shadow"
+                    android:onClick="selectTable"
+                    android:shadowColor="#363636"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="5"
+                    android:text="8"
+                    android:textColor="#FFFFFF"
+                    android:textSize="48dp"
+                    android:fontFamily="@font/candy_cane" android:layout_marginLeft="15dp"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="15dp"
+                android:gravity="center">
+            <Button
+                    android:id="@+id/ButtonTable9"
+                    android:layout_height="100dp"
+                    android:layout_width="150dp"
+
+                    android:background="@drawable/button"
+                    android:drawable="@drawable/shadow"
+                    android:onClick="selectTable"
+                    android:shadowColor="#363636"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="5"
+                    android:text="9"
+                    android:textColor="#FFFFFF"
+                    android:textSize="48dp"
+                    android:fontFamily="@font/candy_cane"/>
+            <Button
+                    android:id="@+id/ButtonTable10"
+                    android:layout_height="100dp"
+                    android:layout_width="150dp"
+
+                    android:background="@drawable/button"
+                    android:drawable="@drawable/shadow"
+                    android:onClick="selectTable"
+                    android:shadowColor="#363636"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="5"
+                    android:text="10"
+                    android:textColor="#FFFFFF"
+                    android:textSize="48dp"
+                    android:fontFamily="@font/candy_cane" android:layout_marginLeft="15dp"/>
         </LinearLayout>
     </LinearLayout>
-    />
 </android.support.constraint.ConstraintLayout>

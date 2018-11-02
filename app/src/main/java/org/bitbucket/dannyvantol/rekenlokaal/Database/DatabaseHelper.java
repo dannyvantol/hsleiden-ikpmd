@@ -13,8 +13,8 @@ import android.util.Log;
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static SQLiteDatabase mSQLDB;
     private static DatabaseHelper mInstance;
-    public static final String dbName = "barometer.db";
-    public static final int dbVersion = 3;
+    public static final String dbName = "rekenlokaal.db";
+    public static final int dbVersion = 1;
 
     public DatabaseHelper(Context context){
         super(context, dbName, null, dbVersion);
@@ -25,6 +25,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             mInstance = new DatabaseHelper(context);
             mSQLDB = mInstance.getWritableDatabase();
         }
+
         return mInstance;
     }
 

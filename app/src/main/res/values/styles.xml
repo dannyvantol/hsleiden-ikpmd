@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="buttonFont">
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/candy_cane</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:textSize">36sp</item>
+    </style>
+
 </resources>

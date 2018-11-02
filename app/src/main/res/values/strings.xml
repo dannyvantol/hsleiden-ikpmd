@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Rekenlokaal</string>
     <string name="developers">Danjee Productions</string>
+    <string name="multiplier">x</string>
 </resources>

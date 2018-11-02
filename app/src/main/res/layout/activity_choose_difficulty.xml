@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ff92b8"
-    tools:context=".ChooseDifficultyActivity">
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             android:background="#ff92b8"
+                                             tools:context=".ChooseDifficultyActivity" android:padding="15sp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/difficlutyEasy"
+    <Button
+            android:id="@+id/difficultyEasy"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_marginTop="130dp"
@@ -28,14 +23,15 @@
             android:text="Makkelijk"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
-            app:layout_constraintBottom_toTopOf="@+id/difficlutyNormal"
+            app:layout_constraintBottom_toTopOf="@+id/difficultyNormal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" android:onClick="selectDifficulty"
+            android:fontFamily="@font/candy_cane"/>
 
-        <Button
-            android:id="@+id/difficlutyNormal"
+    <Button
+            android:id="@+id/difficultyNormal"
             android:layout_width="match_parent"
             android:layout_height="80dp"
 
@@ -49,14 +45,15 @@
             android:text="Middelmatig"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
-            app:layout_constraintBottom_toTopOf="@+id/difficlutyHard"
+            app:layout_constraintBottom_toTopOf="@+id/difficultyHard"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/difficlutyEasy" />
+            app:layout_constraintTop_toBottomOf="@+id/difficultyEasy" android:onClick="selectDifficulty"
+            android:fontFamily="@font/candy_cane"/>
 
-        <Button
-            android:id="@+id/difficlutyHard"
+    <Button
+            android:id="@+id/difficultyHard"
             android:layout_width="match_parent"
             android:layout_height="80dp"
 
@@ -73,6 +70,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/difficlutyNormal" />
-    </LinearLayout>
+            app:layout_constraintTop_toBottomOf="@+id/difficultyNormal" android:onClick="selectDifficulty"
+            android:fontFamily="@font/candy_cane"/>
 </android.support.constraint.ConstraintLayout>

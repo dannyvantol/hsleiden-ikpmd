@@ -21,6 +21,14 @@
         <activity android:name=".PracticeActivity" />
         <activity android:name=".ChooseDifficultyActivity" />
         <activity android:name=".ScoreboardActivity"></activity>
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".ChooseTableActivity"/>
+        <activity android:name=".PracticeActivity"/>
+        <activity android:name=".ChooseDifficultyActivity"/>
+        <activity android:name=".ResultActivity">
+        </activity>
+        <activity android:name=".TestActivity">
+        </activity>
     </application>
 
 </manifest>

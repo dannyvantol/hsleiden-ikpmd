@@ -1,19 +1,35 @@
 package org.bitbucket.dannyvantol.rekenlokaal;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.widget.Button;
+import org.bitbucket.dannyvantol.rekenlokaal.util.Product;
 
-public class PracticeActivity extends AppCompatActivity {
+import java.util.HashMap;
 
-    private Bundle bundle;
-    private int table;
-    private int difficulty;
+public class PracticeActivity extends GameEngine {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_practice);
+    void onCorrectAnswer(Button button, Product product, int chosen) {
+        button.setBackgroundResource(R.drawable.button_correct);
 
-        this.bundle = getIntent().getExtras();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                PracticeActivity.this.loop();
+            }
+        }, 1000);
+    }
+
+    @Override
+    void onIncorrectAnswer(Button button, Product product, int chosen) {
+
+    }
+
+    @Override
+    void onEndGame() {
+
     }
 }
