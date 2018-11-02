@@ -136,13 +136,13 @@ public abstract class GameEngine extends Activity {
     }
 
     public void answer(Button button, int answer) {
+        button.setEnabled(false);
+
         if (answer == this.current.getValue()) {
-            this.onCorrectAnswer(this.current, answer);
-            this.loop();
+            this.onCorrectAnswer(button, this.current, answer);
         } else {
-            button.setEnabled(false);
-            button.setBackgroundResource(R.drawable.button_disabled);
-            this.onIncorrectAnswer(this.current, answer);
+            button.setBackgroundResource(R.drawable.button_incorrect);
+            this.onIncorrectAnswer(button, this.current, answer);
         }
     }
 
@@ -183,9 +183,9 @@ public abstract class GameEngine extends Activity {
         }
     }
 
-    abstract void onCorrectAnswer(Product product, int chosen);
+    abstract void onCorrectAnswer(Button button, Product product, int chosen);
 
-    abstract void onIncorrectAnswer(Product product, int chosen);
+    abstract void onIncorrectAnswer(Button button, Product product, int chosen);
 
     abstract void onEndGame();
 

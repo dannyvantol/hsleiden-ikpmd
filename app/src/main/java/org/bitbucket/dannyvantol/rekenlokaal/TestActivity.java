@@ -3,6 +3,7 @@ package org.bitbucket.dannyvantol.rekenlokaal;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 import org.bitbucket.dannyvantol.rekenlokaal.util.Product;
 
 import java.util.HashMap;
@@ -10,6 +11,7 @@ import java.util.HashMap;
 public class TestActivity extends GameEngine {
 
     HashMap<Product, Integer> failures = new HashMap<>();
+    int grade = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,12 +20,14 @@ public class TestActivity extends GameEngine {
     }
 
     @Override
-    void onCorrectAnswer(Product product, int chosen) {
+    void onCorrectAnswer(Button button, Product product, int chosen) {
+        this.grade++;
+        this.loop();
     }
 
     @Override
-    void onIncorrectAnswer(Product product, int chosen) {
-        failures.put(product, chosen);
+    void onIncorrectAnswer(Button button, Product product, int chosen) {
+        this.failures.put(product, chosen);
         this.loop();
     }
 
@@ -31,6 +35,7 @@ public class TestActivity extends GameEngine {
     void onEndGame() {
         Bundle bundle = new Bundle();
         bundle.putSerializable("failures", this.failures);
+        bundle.putInt("grade", this.grade);
 
         Intent intent = new Intent(this, ResultActivity.class);
         intent.putExtras(bundle);
