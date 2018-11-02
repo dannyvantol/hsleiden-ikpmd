@@ -44,6 +44,10 @@ public class ChooseDifficultyActivity extends AppCompatActivity {
                 break;
             case TEST:
                 intent = new Intent(this, TestActivity.class);
+                break;
+            case DAILY:
+                intent = new Intent(this, DailyChallengeActivity.class);
+                break;
         }
 
         this.bundle.putSerializable("difficulty", difficulty);

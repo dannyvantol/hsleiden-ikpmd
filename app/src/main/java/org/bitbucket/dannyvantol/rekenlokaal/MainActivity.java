@@ -32,20 +32,6 @@ public class MainActivity extends AppCompatActivity {
         buttonScoreboard = (Button) findViewById(R.id.ButtonScoreboard);
         butttonDaily = (Button) findViewById(R.id.ButtonDaily);
 
-        buttonScoreboard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                addToDatabase();
-            }
-        });
-
-        butttonDaily.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getFromDatabase();
-            }
-        });
-
         this.mediaPlayer = MediaPlayer.create(this, R.raw.kahoot_lobby);
         this.mediaPlayer.setLooping(true);
         this.mediaPlayer.start();
@@ -71,15 +57,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void addToDatabase() {
-        DatabaseHelper databaseHelper = DatabaseHelper.getHelper(this);
+    public void dailychallenge(View view) {
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("mode", GameMode.DAILY);
 
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(DatabaseInfo.TestsColumn.DIFFICULTY, 1);
-        contentValues.put(DatabaseInfo.TestsColumn.TABLE, 7);
-        contentValues.put(DatabaseInfo.TestsColumn.GRADE, 9);
+        Intent intent = new Intent(MainActivity.this, ChooseDifficultyActivity.class);
+        intent.putExtras(bundle);
 
-        databaseHelper.insert(DatabaseInfo.Tests.TESTS, null, contentValues);
+        startActivity(intent);
     }
 
     private void getFromDatabase() {

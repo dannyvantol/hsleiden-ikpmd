@@ -24,7 +24,7 @@ public abstract class GameEngine extends Activity {
     private static int LIMIT = 10;
     private Bundle bundle;
 
-    private int table;
+    protected int table;
     private Difficulty difficulty;
     private TextView product;
 
@@ -62,15 +62,20 @@ public abstract class GameEngine extends Activity {
         this.difficultyMapper.put(Difficulty.NORMAL, 4);
         this.difficultyMapper.put(Difficulty.HARD, 6);
 
-        this.generateLayout();
-        this.generateRandomOrderProducts();
-
         this.mediaPlayer = MediaPlayer.create(this, R.raw.kahoot_original);
         this.mediaPlayer.setLooping(true);
         this.mediaPlayer.start();
 
         this.progressBar = (ProgressBar) findViewById(R.id.progressBar);
         this.progressBar.setVisibility(View.INVISIBLE);
+
+        this.generateLayout();
+
+        try {
+            this.generateRandomOrderProducts();
+        } catch (NullPointerException exception) {
+
+        }
     }
 
     @Override
