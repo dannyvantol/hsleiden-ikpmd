@@ -53,7 +53,7 @@ public class ChooseTableActivity extends AppCompatActivity {
     private void goToChooseDifficulty(int table) {
         Intent intent = new Intent(ChooseTableActivity.this, ChooseDifficultyActivity.class);
 
-        Bundle bundle = new Bundle();
+        Bundle bundle = getIntent().getExtras();
         bundle.putInt("table", table);
 
         intent.putExtras(bundle);

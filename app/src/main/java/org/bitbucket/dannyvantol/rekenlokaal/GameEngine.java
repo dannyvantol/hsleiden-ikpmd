@@ -1,9 +1,13 @@
 package org.bitbucket.dannyvantol.rekenlokaal;
 
 import android.app.Activity;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import org.bitbucket.dannyvantol.rekenlokaal.layout.ButtonLayout;
 import org.bitbucket.dannyvantol.rekenlokaal.layout.FourButtonLayout;
@@ -37,6 +41,10 @@ public abstract class GameEngine extends Activity {
 
     private HashMap<Difficulty, Integer> difficultyMapper = new HashMap<>();
 
+    private MediaPlayer mediaPlayer;
+    private ProgressBar progressBar;
+    private CountDownTimer countDownTimer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +64,13 @@ public abstract class GameEngine extends Activity {
 
         this.generateLayout();
         this.generateRandomOrderProducts();
+
+        this.mediaPlayer = MediaPlayer.create(this, R.raw.kahoot_original);
+        this.mediaPlayer.setLooping(true);
+        this.mediaPlayer.start();
+
+        this.progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        this.progressBar.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -81,11 +96,11 @@ public abstract class GameEngine extends Activity {
         this.buttonLayout.generate();
     }
 
-    protected boolean hasNext() {
+    private boolean hasNext() {
         return counter < this.mapper.size();
     }
 
-    protected Product next() {
+    private Product next() {
         String productKey = this.products[counter];
         Product product = new Product(productKey, this.mapper.get(productKey));
 
@@ -94,14 +109,40 @@ public abstract class GameEngine extends Activity {
         return product;
     }
 
+    protected void enableTimer() {
+        this.progressBar.setVisibility(View.VISIBLE);
+        this.countDownTimer = new CountDownTimer(10000, 100) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                int progress = (int) millisUntilFinished / 100;
+                GameEngine.this.progressBar.setProgress(progress);
+                System.out.println((int) millisUntilFinished / 100);
+            }
+
+            @Override
+            public void onFinish() {
+                GameEngine.this.loop();
+            }
+        };
+
+        this.resetTimer();
+    }
+
+    protected void resetTimer() {
+        if (this.countDownTimer != null) {
+            countDownTimer.cancel();
+            countDownTimer.start();
+        }
+    }
+
     public void answer(Button button, int answer) {
         if (answer == this.current.getValue()) {
             this.onCorrectAnswer(this.current, answer);
             this.loop();
         } else {
-            this.onIncorrectAnswer(this.current, answer);
             button.setEnabled(false);
             button.setBackgroundResource(R.drawable.button_disabled);
+            this.onIncorrectAnswer(this.current, answer);
         }
     }
 
@@ -122,11 +163,13 @@ public abstract class GameEngine extends Activity {
         ArrayShuffle.string(this.products);
     }
 
-    private void loop() {
+    protected void loop() {
+
         if (this.hasNext()) {
+            this.resetTimer();
             this.current = this.next();
 
-            int[] random = this.mathEngine.generateRandomNumbers(this.difficultyMapper.get(this.difficulty), new int[] {this.current.getValue()});
+            int[] random = this.mathEngine.generateRandomNumbers(this.difficultyMapper.get(this.difficulty), new int[]{this.current.getValue()});
             random[0] = this.current.getValue();
 
             ArrayShuffle.integer(random);
@@ -134,11 +177,33 @@ public abstract class GameEngine extends Activity {
             this.product.setText(this.current.getProduct());
             this.buttonLayout.setValues(random);
         } else {
+            this.mediaPlayer.stop();
+            this.onEndGame();
             this.finish();
         }
     }
 
     abstract void onCorrectAnswer(Product product, int chosen);
+
     abstract void onIncorrectAnswer(Product product, int chosen);
+
     abstract void onEndGame();
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        this.mediaPlayer.stop();
+
+        if (this.countDownTimer != null)
+            this.countDownTimer.cancel();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        this.mediaPlayer.stop();
+
+        if (this.countDownTimer != null)
+            this.countDownTimer.cancel();
+    }
 }

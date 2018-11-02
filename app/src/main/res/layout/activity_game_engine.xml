@@ -7,6 +7,13 @@
         android:layout_height="match_parent"
         tools:context=".PracticeActivity" android:background="#ff92b8">
 
+    <ProgressBar
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:max="100"
+            android:progressDrawable="@drawable/progress"/>
     <TextView
             android:text="Place a product here"
             android:layout_width="wrap_content"
@@ -14,7 +21,7 @@
             android:id="@+id/product" app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="100dp" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" android:fontFamily="@font/candy_cane"
-            android:textSize="36sp"/>
+            android:textSize="64dp"/>
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"

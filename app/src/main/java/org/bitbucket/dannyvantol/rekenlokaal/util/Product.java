@@ -1,6 +1,8 @@
 package org.bitbucket.dannyvantol.rekenlokaal.util;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     private String product;
     private int value;
 

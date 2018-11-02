@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 
 import org.bitbucket.dannyvantol.rekenlokaal.util.Difficulty;
+import org.bitbucket.dannyvantol.rekenlokaal.util.GameMode;
+
+import static org.bitbucket.dannyvantol.rekenlokaal.util.GameMode.PRACTICE;
 
 public class ChooseDifficultyActivity extends AppCompatActivity {
 
@@ -34,11 +37,19 @@ public class ChooseDifficultyActivity extends AppCompatActivity {
     }
 
     private void goToPractice(Difficulty difficulty) {
-        Intent intent = new Intent(this, PracticeActivity.class);
+        Intent intent = null;
+        switch((GameMode) this.bundle.getSerializable("mode")) {
+            case PRACTICE:
+                intent = new Intent(this, PracticeActivity.class);
+                break;
+            case TEST:
+                intent = new Intent(this, TestActivity.class);
+        }
 
         this.bundle.putSerializable("difficulty", difficulty);
         intent.putExtras(bundle);
 
         startActivity(intent);
+        finish();
     }
 }

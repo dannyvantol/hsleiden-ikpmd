@@ -14,12 +14,12 @@
             android:text="Welke tafel wil je oefenen?"
             android:textAlignment="center"
             android:textAllCaps="false"
-            android:textColor="@android:color/holo_orange_dark"
+            android:textColor="@color/colorBlackAlpha"
             android:textSize="30sp"
             android:textStyle="bold"
             tools:ignore="MissingConstraints" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="32dp"/>
+            android:layout_marginTop="32dp" android:fontFamily="@font/candy_cane"/>
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -44,7 +44,7 @@
                     android:shadowRadius="5"
                     android:text="1"
                     android:textColor="#FFFFFF"
-                    android:textSize="30sp"
+                    android:textSize="48dp"
                     android:fontFamily="@font/candy_cane"/>
             <Button
                     android:id="@+id/ButtonTable2"
@@ -60,7 +60,7 @@
                     android:shadowRadius="5"
                     android:text="2"
                     android:textColor="#FFFFFF"
-                    android:textSize="30sp"
+                    android:textSize="48dp"
                     android:fontFamily="@font/candy_cane" android:layout_marginLeft="15dp"/>
         </LinearLayout>
         <LinearLayout
@@ -82,7 +82,7 @@
                     android:shadowRadius="5"
                     android:text="3"
                     android:textColor="#FFFFFF"
-                    android:textSize="30sp"
+                    android:textSize="48dp"
                     android:fontFamily="@font/candy_cane"/>
             <Button
                     android:id="@+id/ButtonTable4"
@@ -98,7 +98,7 @@
                     android:shadowRadius="5"
                     android:text="4"
                     android:textColor="#FFFFFF"
-                    android:textSize="30sp"
+                    android:textSize="48dp"
                     android:fontFamily="@font/candy_cane" android:layout_marginLeft="15dp"/>
         </LinearLayout>
         <LinearLayout
@@ -120,7 +120,7 @@
                     android:shadowRadius="5"
                     android:text="5"
                     android:textColor="#FFFFFF"
-                    android:textSize="30sp"
+                    android:textSize="48dp"
                     android:fontFamily="@font/candy_cane"/>
             <Button
                     android:id="@+id/ButtonTable6"
@@ -135,7 +135,7 @@
                     android:shadowRadius="5"
                     android:text="6"
                     android:textColor="#FFFFFF"
-                    android:textSize="30sp"
+                    android:textSize="48dp"
                     android:fontFamily="@font/candy_cane" android:layout_marginLeft="15dp"/>
         </LinearLayout>
         <LinearLayout
@@ -157,7 +157,7 @@
                     android:shadowRadius="5"
                     android:text="7"
                     android:textColor="#FFFFFF"
-                    android:textSize="30sp"
+                    android:textSize="48dp"
                     android:fontFamily="@font/candy_cane"/>
             <Button
                     android:id="@+id/ButtonTable8"
@@ -173,7 +173,7 @@
                     android:shadowRadius="5"
                     android:text="8"
                     android:textColor="#FFFFFF"
-                    android:textSize="30sp"
+                    android:textSize="48dp"
                     android:fontFamily="@font/candy_cane" android:layout_marginLeft="15dp"/>
         </LinearLayout>
         <LinearLayout
@@ -195,7 +195,7 @@
                     android:shadowRadius="5"
                     android:text="9"
                     android:textColor="#FFFFFF"
-                    android:textSize="30sp"
+                    android:textSize="48dp"
                     android:fontFamily="@font/candy_cane"/>
             <Button
                     android:id="@+id/ButtonTable10"
@@ -211,7 +211,7 @@
                     android:shadowRadius="5"
                     android:text="10"
                     android:textColor="#FFFFFF"
-                    android:textSize="30sp"
+                    android:textSize="48dp"
                     android:fontFamily="@font/candy_cane" android:layout_marginLeft="15dp"/>
         </LinearLayout>
     </LinearLayout>

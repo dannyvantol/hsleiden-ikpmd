@@ -9,93 +9,93 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.645">
+            android:id="@+id/linearLayout"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.645">
 
         <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:fontFamily="casual"
+                android:fontFamily="@font/candy_cane"
                 android:text="@string/app_name"
                 android:textAlignment="center"
                 android:textAllCaps="false"
-                android:textColor="@android:color/holo_orange_dark"
+                android:textColor="@color/colorBlackAlpha"
                 android:textSize="44sp"
                 android:textStyle="bold"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="54dp"
                 tools:layout_editor_absoluteY="16dp" android:layout_marginBottom="15dp"/>
         <Button
-            android:id="@+id/ButtonOefenen"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
+                android:id="@+id/ButtonOefenen"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
 
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/button"
-            android:drawable="@drawable/shadow"
-            android:shadowColor="#363636"
-            android:shadowDx="1"
-            android:shadowDy="1"
-            android:shadowRadius="5"
-            android:text="Oefenen"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp" />
-
-        <Button
-            android:id="@+id/ButtonToetsen"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_marginBottom="10dp"
-
-            android:background="@drawable/button"
-            android:shadowColor="#363636"
-            android:shadowDx="1"
-            android:shadowDy="1"
-            android:shadowRadius="5"
-            android:text="Toetsen"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp" />
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button"
+                android:drawable="@drawable/shadow"
+                android:shadowColor="#363636"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="5"
+                android:text="Oefenen"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp" android:fontFamily="@font/candy_cane" android:onClick="practice"/>
 
         <Button
-            android:id="@+id/ButtonDaily"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_marginBottom="10dp"
+                android:id="@+id/ButtonToetsen"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginBottom="10dp"
 
-            android:background="@drawable/button"
-            android:shadowColor="#363636"
-            android:shadowDx="1"
-            android:shadowDy="1"
-            android:shadowRadius="5"
-            android:text="dagelijkse uitdaging"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp" />
+                android:background="@drawable/button"
+                android:shadowColor="#363636"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="5"
+                android:text="Toetsen"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp" android:fontFamily="@font/candy_cane" android:onClick="test"/>
 
         <Button
-            android:id="@+id/ButtonScoreboard"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:background="@drawable/button"
+                android:id="@+id/ButtonDaily"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginBottom="10dp"
 
-            android:shadowColor="#363636"
-            android:shadowDx="1"
-            android:shadowDy="1"
-            android:shadowRadius="5"
-            android:text="scoreboard"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp" />
+                android:background="@drawable/button"
+                android:shadowColor="#363636"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="5"
+                android:text="dagelijkse uitdaging"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp" android:fontFamily="@font/candy_cane"/>
+
+        <Button
+                android:id="@+id/ButtonScoreboard"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/button"
+
+                android:shadowColor="#363636"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="5"
+                android:text="scoreboard"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp" android:fontFamily="@font/candy_cane"/>
 
     </LinearLayout>
 

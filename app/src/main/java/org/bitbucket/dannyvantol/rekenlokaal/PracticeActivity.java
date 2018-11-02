@@ -1,9 +1,7 @@
 package org.bitbucket.dannyvantol.rekenlokaal;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
-import org.bitbucket.dannyvantol.rekenlokaal.util.ArrayShuffle;
-import org.bitbucket.dannyvantol.rekenlokaal.util.Difficulty;
 import org.bitbucket.dannyvantol.rekenlokaal.util.Product;
 
 import java.util.HashMap;
