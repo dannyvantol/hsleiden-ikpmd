@@ -14,13 +14,13 @@
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="501dp"
-        android:fontFamily="casual"
+        android:fontFamily="@font/candy_cane"
         android:gravity="center"
         android:text="Gemaakte Toetsen:"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="@android:color/holo_orange_dark"
-        android:textSize="24sp"
+        android:textColor="@color/colorBlackAlpha"
+        android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,24 +41,36 @@
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <TableLayout
+            android:id="@+id/table"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" android:layout_marginTop="16dp" android:id="@+id/table">
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp">
 
-            <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
                 <TextView
-                    android:text="Tafel: "
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/tafel" android:layout_weight="1"/>
-                <TextView
-                    android:text="Moeilijkheid: "
+                    android:id="@+id/tafel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" android:id="@+id/moeilijkheid"/>
+                    android:layout_weight="1"
+                    android:text="Tafel: " />
+
                 <TextView
-                    android:text="Cijfer: : "
+                    android:id="@+id/moeilijkheid"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/cijfer"
-                    android:textAlignment="textEnd" android:layout_weight="1"/>
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Moeilijkheid: " />
+
+                <TextView
+                    android:id="@+id/cijfer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cijfer: : "
+                    android:textAlignment="textEnd" />
             </TableRow>
         </TableLayout>
     </ScrollView>
