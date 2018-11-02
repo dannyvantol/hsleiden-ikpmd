@@ -1,27 +1,24 @@
 package org.bitbucket.dannyvantol.rekenlokaal;
 
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.Cursor;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import org.bitbucket.dannyvantol.rekenlokaal.Database.DatabaseHelper;
-import org.bitbucket.dannyvantol.rekenlokaal.Database.DatabaseInfo;
+import com.google.firebase.database.*;
 import org.bitbucket.dannyvantol.rekenlokaal.util.GameMode;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button buttonOefenen;
     private Button buttonScoreboard;
-    private Button butttonDaily;
+    private Button buttonDaily;
 
     private MediaPlayer mediaPlayer;
 
+    public static final FirebaseDatabase DATABASE = FirebaseDatabase.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +27,31 @@ public class MainActivity extends AppCompatActivity {
 
         buttonOefenen = (Button) findViewById(R.id.ButtonOefenen);
         buttonScoreboard = (Button) findViewById(R.id.ButtonScoreboard);
-        butttonDaily = (Button) findViewById(R.id.ButtonDaily);
+        buttonDaily = (Button) findViewById(R.id.ButtonDaily);
 
         this.mediaPlayer = MediaPlayer.create(this, R.raw.kahoot_lobby);
         this.mediaPlayer.setLooping(true);
         this.mediaPlayer.start();
+
+        DatabaseReference connectedRef = FirebaseDatabase.getInstance().getReference(".info/connected");
+        connectedRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                boolean connected = snapshot.getValue(Boolean.class);
+                if (connected) {
+                    buttonDaily.setEnabled(true);
+                    buttonDaily.setBackgroundResource(R.drawable.button);
+                } else {
+                    buttonDaily.setEnabled(false);
+                    buttonDaily.setBackgroundResource(R.drawable.button_disables);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                System.err.println("Listener was cancelled");
+            }
+        });
     }
 
     public void practice(View view) {
@@ -60,25 +77,12 @@ public class MainActivity extends AppCompatActivity {
     public void dailychallenge(View view) {
         Bundle bundle = new Bundle();
         bundle.putSerializable("mode", GameMode.DAILY);
+        bundle.putInt("table", 1);
 
         Intent intent = new Intent(MainActivity.this, ChooseDifficultyActivity.class);
         intent.putExtras(bundle);
 
         startActivity(intent);
-    }
-
-    private void getFromDatabase() {
-        DatabaseHelper databaseHelper = DatabaseHelper.getHelper(this);
-
-        Cursor cursor = databaseHelper.query(DatabaseInfo.Tests.TESTS, new String[]{
-            "*"
-        },null, null, null, null, null);
-
-        cursor.moveToFirst();
-
-        String cijfer = (String) cursor.getString(cursor.getColumnIndex("grade"));
-
-        Log.d("Je cijfer is: ", cijfer + "!");
     }
 
     @Override

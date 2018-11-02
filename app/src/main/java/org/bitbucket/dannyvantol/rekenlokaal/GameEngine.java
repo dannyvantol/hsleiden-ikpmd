@@ -21,29 +21,29 @@ import org.bitbucket.dannyvantol.rekenlokaal.util.Product;
 import java.util.HashMap;
 
 public abstract class GameEngine extends Activity {
-    private static int LIMIT = 10;
+    protected static int LIMIT = 10;
     private Bundle bundle;
 
     protected int table;
-    private Difficulty difficulty;
-    private TextView product;
+    protected Difficulty difficulty;
+    protected TextView product;
 
-    private int counter = 0;
+    protected int counter = 0;
 
-    private String[] products;
-    private HashMap<String, Integer> mapper = new HashMap<>();
+    protected String[] products;
+    protected HashMap<String, Integer> mapper = new HashMap<>();
 
-    private LinearLayout buttonContainer;
-    private ButtonLayout buttonLayout;
+    protected LinearLayout buttonContainer;
+    protected ButtonLayout buttonLayout;
 
-    private MathEngine mathEngine;
-    private Product current;
+    protected MathEngine mathEngine;
+    protected Product current;
 
-    private HashMap<Difficulty, Integer> difficultyMapper = new HashMap<>();
+    protected HashMap<Difficulty, Integer> difficultyMapper = new HashMap<>();
 
-    private MediaPlayer mediaPlayer;
-    private ProgressBar progressBar;
-    private CountDownTimer countDownTimer;
+    protected MediaPlayer mediaPlayer;
+    protected ProgressBar progressBar;
+    protected CountDownTimer countDownTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,11 +101,11 @@ public abstract class GameEngine extends Activity {
         this.buttonLayout.generate();
     }
 
-    private boolean hasNext() {
+    protected boolean hasNext() {
         return counter < this.mapper.size();
     }
 
-    private Product next() {
+    protected Product next() {
         String productKey = this.products[counter];
         Product product = new Product(productKey, this.mapper.get(productKey));
 
@@ -121,7 +121,6 @@ public abstract class GameEngine extends Activity {
             public void onTick(long millisUntilFinished) {
                 int progress = (int) millisUntilFinished / 100;
                 GameEngine.this.progressBar.setProgress(progress);
-                System.out.println((int) millisUntilFinished / 100);
             }
 
             @Override
@@ -164,7 +163,6 @@ public abstract class GameEngine extends Activity {
             this.mapper.put(this.products[x], products[x]);
         }
 
-        System.out.println(this.products[0]);
         ArrayShuffle.string(this.products);
     }
 
