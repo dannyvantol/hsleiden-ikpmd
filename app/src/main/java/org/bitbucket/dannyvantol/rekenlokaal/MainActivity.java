@@ -6,10 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import android.widget.Button;
 import com.google.firebase.database.*;
 import org.bitbucket.dannyvantol.rekenlokaal.util.GameMode;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Button buttonDaily;
 
     private MediaPlayer mediaPlayer;
     public static final FirebaseDatabase DATABASE = FirebaseDatabase.getInstance();
@@ -18,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        this.buttonDaily = (Button) findViewById(R.id.ButtonDaily);
 
         this.mediaPlayer = MediaPlayer.create(this, R.raw.kahoot_lobby);
         this.mediaPlayer.setLooping(true);
@@ -67,6 +72,8 @@ public class MainActivity extends AppCompatActivity {
     public void scoreboard(View view) {
         Intent intent = new Intent(MainActivity.this, ScoreboardActivity.class);
         startActivity(intent);
+    }
+
     public void dailychallenge(View view) {
         Bundle bundle = new Bundle();
         bundle.putSerializable("mode", GameMode.DAILY);
