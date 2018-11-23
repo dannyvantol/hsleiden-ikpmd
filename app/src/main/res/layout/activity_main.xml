@@ -81,7 +81,7 @@
                 android:shadowRadius="5"
                 android:text="dagelijkse uitdaging"
                 android:textColor="#FFFFFF"
-                android:textSize="30sp" android:fontFamily="@font/candy_cane"/>
+                android:textSize="30sp" android:fontFamily="@font/candy_cane" android:onClick="dailychallenge"/>
 
         <Button
             android:id="@+id/ButtonScoreboard"
